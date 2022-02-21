@@ -1,0 +1,28 @@
+{
+  "name": "dinosaur-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "creatures.js",
+  "scripts": {
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register -r jsdom-global/register 'test/**/*.ts' --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kluth/dinosaur-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kluth/dinosaur-project/issues"
+  },
+  "homepage": "https://github.com/kluth/dinosaur-project#readme",
+  "devDependencies": {
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "chai": "^4.3.6",
+    "jsdom": "^19.0.0",
+    "mocha": "^9.2.1",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.5.0"
+  }
+}
