@@ -136,7 +136,9 @@ const handleFormSubmit = async (event: SubmitEvent) => {
     name?: string;
   }[] = [];
 
-  await fetch("../dino.json")
+  await fetch(
+    "https://raw.githubusercontent.com/kluth/dinosaur-project/main/dino.json"
+  )
     .then((res) => res.json())
     .then((data) => {
       data.Dinos.map(
