@@ -1,0 +1,5 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended", "eslint-config-airbnb"],
+  "ignorePatterns": ["js/**/*.ts"]
+}

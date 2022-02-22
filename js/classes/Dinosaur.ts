@@ -1,6 +1,5 @@
 import Creature from "./Creature.js";
-class Human extends Creature {
-  name: string;
+class Dinosaur extends Creature {
   constructor(
     species: string,
     height: number,
@@ -9,12 +8,10 @@ class Human extends Creature {
     where: string,
     when: string,
     fact: string,
-    name: string,
-    numOfLegs: number = 2
+    numOfLegs: number = 4
   ) {
     super(species, height, weight, diet, where, when, fact, numOfLegs);
-    this.name = name
   }
 }
 
-export default Human;
+export default Dinosaur;
