@@ -30,8 +30,13 @@ h1 {
 }
 
 form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     margin-block: 2vh;
+}
+
+form > div {
+    display: grid;
 }
 
 .hidden {

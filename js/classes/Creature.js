@@ -7,8 +7,7 @@ class Creature {
         this.where = where;
         this.when = when;
         this.fact = fact;
-        this.numOfLegs = numOfLegs
+        this.numOfLegs = numOfLegs;
     }
 }
-
-export default Creature
+export default Creature;
