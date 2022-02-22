@@ -83,9 +83,13 @@ const createGrid = (
 
     let computedHTML = `
     <h2>${creature.name ? creature.name : creature.species}</h2>
-        <img src="img/${creature.species.toLowerCase()}.png">
+        <img src="https://raw.githubusercontent.com/kluth/dinosaur-project/main/img/${creature.species.toLowerCase()}.png">
         <footer>
-        ${creature.species !== 'Human' ? facts[Math.floor(Math.random() * (facts.length - 1 - 0) + 0)] : ''}
+        ${
+          creature.species !== "Human"
+            ? facts[Math.floor(Math.random() * (facts.length - 1 - 0) + 0)]
+            : ""
+        }
         </footer>`;
 
     tile.innerHTML = computedHTML
@@ -137,7 +141,7 @@ const handleFormSubmit = async (event: SubmitEvent) => {
   }[] = [];
 
   await fetch(
-    "/dino.json"
+    "https://raw.githubusercontent.com/kluth/dinosaur-project/main/dino.json"
   )
     .then((res) => res.json())
     .then((data) => {
