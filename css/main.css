@@ -42,6 +42,13 @@ form > div {
     margin-inline: auto;
 }
 
+@media screen and (max-width: 380px) {
+    #grid {
+        grid-template-columns: 1fr;
+    }
+    
+}
+
 .card {
     position: relative;
 }
