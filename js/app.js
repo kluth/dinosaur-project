@@ -41,8 +41,7 @@ const createGrid = (creatures) => {
   const grid = document.createElement("div");
   grid.id = "grid";
   // Iterate over all creatures
-  grid.append(
-    creatures.map((creature, index) => {
+  creatures.map((creature, index) => {
       const facts = [];
       let dietCompare;
       let heightCompare;
@@ -72,9 +71,9 @@ const createGrid = (creatures) => {
         }
         </footer>`;
       tile.innerHTML = computedHTML;
-      return tile;
+    grid.append(tile);
+    return 1
     })
-  );
   return grid;
 };
 /**
@@ -103,16 +102,13 @@ const handleFormSubmit = async (event) => {
   /** ******************
    * DINOS PARSING
    ******************* */
-  const creatures = [];
+  let creatures = [];
   await fetch(
     "https://raw.githubusercontent.com/kluth/dinosaur-project/main/dino.json"
   )
     .then((res) => res.json())
     .then((data) => {
-      data.Dinos.map((dino) => {
-        creatures.push(dino);
-        return 0;
-      });
+      creatures = data.Dinos.map((dino) => dino);
     });
   creatures.splice(4, 0, human);
   document.querySelector("body")?.append(createGrid(creatures));
@@ -160,7 +156,7 @@ const createChild = (element, name, type, label = false, parameter, opts) => {
       });
       break;
     default:
-      return;
+      break;
   }
   if (label) {
     const lbl = document.createElement("label");
@@ -169,7 +165,7 @@ const createChild = (element, name, type, label = false, parameter, opts) => {
     container.append(lbl);
   }
   container.append(newEl);
-  document.querySelector("body").append(container);
+  return container;
 };
 // The form fields as an array of objects to iterate through
 const formElements = [
@@ -246,19 +242,19 @@ const createForm = () => {
   form.addEventListener("submit", (event) => {
     handleFormSubmit(event);
   });
-  let elements = []
-  elements.push(formElements.map((currentElement) => {
-      const el = createChild(
+  formElements.map((currentElement) => {
+    form?.append(
+      createChild(
         currentElement.element,
         currentElement.name,
         currentElement.type,
         currentElement.label,
         currentElement.parameters,
         currentElement.opts
-      );
-      return el;
-    }))
-    form.append(elements)
+      )
+    );
+    return 1;
+  });
   return form;
 };
 /**
