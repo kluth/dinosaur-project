@@ -258,6 +258,7 @@ const createForm = () => {
       );
       return el;
     }))
+    form.append(elements)
   return form;
 };
 /**
