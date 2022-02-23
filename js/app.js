@@ -246,8 +246,8 @@ const createForm = () => {
   form.addEventListener("submit", (event) => {
     handleFormSubmit(event);
   });
-  form.append(
-    formElements.map((currentElement) => {
+  let elements = []
+  elements.push(formElements.map((currentElement) => {
       const el = createChild(
         currentElement.element,
         currentElement.name,
@@ -257,8 +257,7 @@ const createForm = () => {
         currentElement.opts
       );
       return el;
-    })
-  );
+    }))
   return form;
 };
 /**
